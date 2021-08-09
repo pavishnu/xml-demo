@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">	
+	
+		<bean id="actor" class="com.stackroute.domain.Actor">
+			<constructor-arg type="java.lang.String" name="name" value="XYZ"></constructor-arg>
+			<constructor-arg type="java.lang.String" name="gender" value="Male"></constructor-arg>
+			<constructor-arg type="int" name="age" value="50"></constructor-arg>
+		</bean>
+		
+		
+		<bean name="MovieA, MovieB" class="com.stackroute.domain.Movie" scope="prototype">
+			<constructor-arg type="java.lang.String" name="name" value="ABC"></constructor-arg>
+			<constructor-arg type="java.lang.String" name="genre" value="Comedy"></constructor-arg>
+			<constructor-arg type="com.stackroute.domain.Actor" name="actor" ref="actor"></constructor-arg>
+			<constructor-arg type="int" name="releaseYear" value="2005"></constructor-arg>
+		</bean>
+	
+</beans>
